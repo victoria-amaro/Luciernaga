@@ -1,17 +1,29 @@
-# flutter_application_1
+Luciérnaga [EN PROCESO]
 
-A new Flutter project.
+Luciérnaga busca ser  app móvil en Flutter para guardar y organizar libros, películas, series, podcasts y videos de YouTube que descubres en TikTok e Instagram.
 
-## Getting Started
+Guarda cada obra en dos taps con portada, datos oficiales, plataformas donde verla o escucharla, fuente de origen, tags, estado (Por ver, En proceso, Completado) y reseña.
 
-This project is a starting point for a Flutter application.
+⚡ Características principales
+Flujo ultrarrápido: Vía Share Intent desde Instagram/TikTok o detección rápida de capturas.
 
-A few resources to get you started if this is your first Flutter project:
+Pipeline "Buscar y Verificar": OCR local en el dispositivo combinado con búsquedas paralelas en APIs oficiales.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Soporte multiformato: Integración con Google Books, TMDB y Spotify.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Selección múltiple (Batch Saving): Identifica y guarda varias obras detectadas en una sola imagen (ej. listas o tops).
+
+Backend seguro: Supabase (PostgreSQL, RLS y Edge Functions).
+
+🏗️ Arquitectura en breve
+[ Captura / Share Intent ] ──► [ OCR Local (ML Kit) ] ──► [ Filtro de Ruido ]
+                                                                 │
+[ Guardado en Batch (Supabase) ] ◄── [ Checklist de Selección ] ◄┼── [ Búsqueda Paralela (APIs) ]
+🛠️ Tech Stack
+Frontend: Flutter
+
+OCR: Google ML Kit Text Recognition
+
+Backend & Auth: Supabase (PostgreSQL, RLS)
+
+APIs: TMDB API, Google Books API, Spotify Web API
